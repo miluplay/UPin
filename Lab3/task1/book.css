@@ -15,10 +15,6 @@ h1, h2 {
     color: gray;
 }
 
-.author {
-    by: svitter;
-}
-
 h1 {
     border-bottom: 40px solid black;
     border-bottom: 20px;
@@ -57,35 +53,4 @@ li#book4 {
 
 li#book5 {
     list-style-image: url(../../src/homework/5.png);
-}
-
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-    position: sticky;
-    top: 0;
-    width: 100%;
-}
-
-li {
-    float: left;
-}
-
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-li a:hover {
-    background-color: #111;
-}
-
-.active {
-    background-color: #4CAF50;
 }
