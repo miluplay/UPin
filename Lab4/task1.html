@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>text3_1</title>
+		<script>
+			function cost(){
+				var jg=sum();
+				alert("总计"+jg+"元");
+			}
+			function sum(){
+			var a,b,c,total;
+			var sg=document.getElementById("a")
+			if(sg.elements[0].checked)
+			a=1;
+			else a=0;
+			if(sg.elements[1].checked)
+			b=1;
+			else b=0;
+			if(sg.elements[2].checked)
+			c=1;
+			else c=0;
+			total=2*a+3*b+4*c;
+			return total;
+			
+			}
+		</script>
+	</head>
+	<body>
+		<form id="a" action="">
+	<input type="checkbox" onclick="sum()">苹果（2元）
+	<br>
+	<input type="checkbox" onclick="sum()">橘子（3元）
+	<br>
+	<input type="checkbox"onclick="sum()">香蕉（4元）
+	<br>
+	<br><br>
+	<input type="button" onclick="cost()" value="总价">
+	</form> 
+	</body>
+</html>

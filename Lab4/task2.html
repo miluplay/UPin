@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh">
+<meta charset="utf-8"/>
+<script language="JavaScript">
+    function init() {
+        document.reg_form.usrname.focus();
+    }
+
+    function Verify() {
+        if (VerifyUsrName() === false)
+            return false;
+        if (VerifyPasswd() === false)
+            return false;
+        if (VerifyDepart() === false)
+            return false;
+        if (VerifyAddr() === false)
+            return false;
+        if (VerifyPersonName() === false)
+            return false;
+        if (VerifyPhon() === false)
+            return false;
+        if (VerifyZip() === false)
+            return false;
+        if (VerifyBp() === false)
+            return false;
+        if (VerifyFax() === false)
+            return false;
+        if (VerifyHand() === false)
+            return false;
+        if (VerifyEmail() === false)
+            return false;
+        if (VerifyHomepage() === false)
+            return false;
+        if (VerifyQuest() === false)
+            return false;
+        if (VerifyAnsw() === false)
+            return false;
+        return true;
+    }
+
+    function VerifyUsrName() {
+        if (document.reg_form.usrname.value.length === 0) {
+            alert("用户名不能为空！请见左边的说明，输入合法的用户名.");
+            return false;
+        }
+        if (ValidOfUsrName() === false) {
+            alert("您输入的用户名中包含了不合法的字符！请见左边的说明，重新输入.");
+            return false;
+        }
+        return true;
+    }
+
+    function VerifyPasswd() {
+        if (document.reg_form.pass.value.length === 0) {
+            alert("密码不能为空！请见左边的说明，输入您的密码。");
+            return false;
+        }
+        if (document.reg_form.pass.value !== document.reg_form.pass2.value) {
+            alert("您两次输入的密码不相同！请重新输入密码。");
+            return false;
+        }
+        return true;
+    }
+
+    function VerifyDepart() {
+        if (document.reg_form.dname.value.length === 0) {
+            alert("单位名称不能为空！请见左边的说明进行输入。");
+            return false;
+        }
+        return true;
+    }
+</script>
+<!-- todo 主要来自网络参考 -->
+<body topmargin=6>
+<center>
+    <font face="隶书" size=8 color=red>用户注册</font>
+    <hr width=90% color=blue>
+    <br>
+    <table border=0 aligen=center onload="init()">
+        <tr>
+            <td valign=top><!对用户填写表单数据的说明-->
+                <table border=1 align=left bordercolor=blue bgcolor=ivory width=200 style="font-size: 14px;align:left;"
+                       cellpadding=8>
+                    <tr>
+                        <td>
+                            <div style="color:#2b4c03;font-size: 12px;text-align: left;font-family: '宋体';">
+                                <span style="color:#ff0101;font-size: 14px"><b>&nbsp;说明</b></span><br><br>
+                                <div>*为保证您今后在本网发布的供求信息的可靠性，请您如实填写会员信息表。</div>
+                                <br>
+                                <div>*必须填写的基本信息：用户名、密码、忘记密码后查询密码的问题、单位名称、联系人、地址、邮编、电话。</div>
+                                <br>
+                                <div>*<font color=black><b>用户名</b></font>:16个字符以内的英文字母数字串、可包含下划线"_";<br>
+                                    *<font color=black><b>密码</b></font>:12个字符以内的任意字符串。
+                                </div>
+                                <br>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td valign=top align=center><!表单输入区定义-->
+                <form action="reg_handle.asp" method="get" name="reg_form" onSubmit="return Verify()">
+                    <table border=1 bordercolor=gold bgcolor=lavenderblush width=550
+                           style="font-size: 12px; ailgn:left;" cellpadding=4>
+                        <tr>
+                            <td width=550 ailgn=left colspan=2>
+                                &nbsp;用户名&nbsp;<input type=text size=16 name="usrname">
+                                &nbsp;密码&nbsp;<input type=password size=12 name=pass>
+                                &nbsp;再输入一遍密码&nbsp;<input type=password size=12 name="pass2">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width=550 align=left colspan=2>
+                                &nbsp;单位名称&nbsp;<input type=text size=60 name="dname">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width=550 colspan=2 align=left>
+                                &nbsp;联系地址&nbsp;<input type=text size=60 name="address">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width=550 align=left colspan=2>
+                                &nbsp;联系人姓名&nbsp;<input type=text size=12 name="person_name">
+                                &nbsp;电话（区号＋号码）&nbsp;<input type=text size=12 name="tel">
+                                &nbsp;邮编&nbsp;<input type=text size=6 name="postcode">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width=500 align=left colspan=2>
+                                &nbsp;寻呼&nbsp;<input type=text size=14 name="bpcode">
+                                &nbsp;传真&nbsp;<input type=text size=12 name="fax">
+                                &nbsp;&nbsp;移动电话&nbsp;<input type=text size=12 name="hand">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width=250 align=left>
+                                &nbsp;Email<input type=text size=30 name="email">
+                            </td>
+                            <td width=300 align=left>&nbsp;主页<input type=text size=40 name="homepg"></td>
+                        </tr>
+                        <tr>
+                            <td width=550 colspan=2 align=left>
+                                &nbsp;忘记密码后查询时的问题 &nbsp;<input type=text size=50 name="quest">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width=550 colspan=2 align=left>
+                                &nbsp;忘记密码后查询问题的答案&nbsp;<input type=text size=50 name="answ">
+                            </td>
+                        </tr>
+                    </table>
+                    <br>
+                    <input type=submit value="发送">&nbsp;&nbsp;<input type=reset value="重填">
+                </form>
+            </td>
+        </tr>
+    </table>
+</center>
+</body>

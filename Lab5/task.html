@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>烟台</title>
+    <meta charset="UTF-8">
+    <style>
+        .divbody {
+            background-color: #dff0f5;
+        }
+    </style>
+
+    <script>
+        var a = "";
+
+        function ClickMe() {
+            document.getElementById("mydiv").style.display = a;
+            if (a === "none") a = "";
+            else a = "none";
+        }
+    </script>
+
+</head>
+<body>
+
+<div class="divbody">
+    <img src="../src/homework/6.jpg" title="烟台风景区" onclick="ClickMe()" style="width: 450px;height: 300px">
+    <div id="mydiv" style="display: none">
+        <img src="../src/homework/6.jpg">
+    </div>
+</div>
+
+</body>
+</html>
